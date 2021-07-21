@@ -1,0 +1,26 @@
+using System;
+using System.Linq;
+
+//Write a program in C# Sharp to create a list of numbers and display the numbers greater than 80 as output.
+public class Program
+{
+
+	public static void Main()
+	{
+		int[] list = new int[]{5, 7, 13, 24, 6, 9, 8, 7};
+		
+		int n = 3;
+		
+        var intQuery =
+            from x in list
+			orderby x descending 
+			select x; 
+		
+		foreach (var number in intQuery){
+			if (n > 0){
+				Console.WriteLine(number);
+				n -= 1;
+			}
+		}
+	}
+}
